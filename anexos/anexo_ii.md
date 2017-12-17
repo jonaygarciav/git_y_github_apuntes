@@ -167,7 +167,7 @@ Para ver el listado de commits que hemos hecho ejecutamos el comando "git log":
 		Commit inicial
 
 
-Desde el navegador abrimos la página web de GitHub y creamos un nuevo repositorio llamado "HelloWorld", la url del proyecto creado es:
+Desde el navegador abrimos la página web de GitHub y creamos un nuevo repositorio llamado "HelloWorld", la URL del proyecto creado es:
 
 	https://github.com/jonaygarcia/helloworld.git
 
