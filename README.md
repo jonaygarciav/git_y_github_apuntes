@@ -9,13 +9,14 @@ BLOQUE I
 
 BLOQUE II
 
-3. [Obteniendo un Repositorio Git](/03_obteniendo_un_repositorio_git.md)
-4. [Guardando Cambios en el Repositorio](/04_guardando_cambios_en_el_repositorio.md)
+3. [Obtener un Repositorio Git](/03_obtener_un_repositorio_git.md)
+4. [Guardar Cambios en el Repositorio](/04_guardar_cambios_en_el_repositorio.md)
+5. [Renombrar y Eliminar Ficheros y Directorios](/05_renombrar_y_eliminar_ficheros_y_directorios.md).
 
 ANEXOS:
 
-* [Anexo I. Instalación de Git](/anexos/anexo_i.md)
-* Anexo II. Configuración de Git
+* [Anexo I. Instalación de Git](/anexos/anexo_i.md).
+* [Anexo II. Crear un Proyecto Git en Local y Subirlo a GitHub](/anexos/anexo_ii.md).
 
 
 
