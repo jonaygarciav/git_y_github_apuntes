@@ -32,7 +32,7 @@ $ git config --global core.editor "nano.exe"
 
 ## Comprobando la Configuración
 
-Si quieres comprobar tu configuración, puedes usar el comando _git config --list__ para mostrar todas las propiedades que _Git_ ha configurado:
+Si quieres comprobar tu configuración, puedes usar el comando _git config --list_ para mostrar todas las propiedades que _Git_ ha configurado:
 
 ```bash
 $ git config --list
