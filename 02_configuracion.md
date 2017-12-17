@@ -50,7 +50,7 @@ Puede que veas claves repetidas, porque Git lee la misma clave de distintos arch
 
 Para ver de qué fichero saca _Git_ cada una de las pripiedades ejecutamos el comando _git config --list --show-origin_:
 
-````bash
+```bash
 $ git config --list --show-origin
 file:"C:\\ProgramData/Git/config"       core.symlinks=false
 file:"C:\\ProgramData/Git/config"       core.autocrlf=true
@@ -79,7 +79,7 @@ file:C:/Users/jonay/.gitconfig  filter.lfs.process=git-lfs filter-process
 file:C:/Users/jonay/.gitconfig  filter.lfs.required=true
 ```
 
-También puedes comprobar qué valor utilizará _Git_ para cada clave específica ejecutando git config <nombre de la clave>:
+También podemos comprobar qué valor utilizará _Git_ para cada clave específica, por ejemplo, para ver el valor de la clave _user.name_:
 
 ```bash
 $ git config user.name
