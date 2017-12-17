@@ -10,6 +10,7 @@ BLOQUE I
 BLOQUE II
 
 3. [Obteniendo un Repositorio Git](/03_obteniendo_un_repositorio_git.md)
+4. [Guardando Cambios en el Repositorio](/04_guardando_cambios_en_el_repositorio.md)
 
 ANEXOS:
 

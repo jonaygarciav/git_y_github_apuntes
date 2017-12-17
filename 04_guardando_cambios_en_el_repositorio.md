@@ -41,53 +41,67 @@ Se puede ver que el archivo _README.md_ está sin rastrear porque aparece debajo
 
 ## Rastrear Archivos Nuevos
 
-Para comenzar a rastrear un archivo debes usar el comando git add. Para comenzar a rastrear el archivo README, puedes ejecutar lo siguiente:
+Para comenzar a rastrear un archivo debemosusar el comando __git add__. Para comenzar a rastrear el archivo _README.md_, ejecutamos el siguiente comando:
 
-$ git add README
-Ahora si vuelves a ver el estado del proyecto, verás que el archivo README está siendo rastreado y está preparado para ser confirmado:
+```bash
+$ git add README.md
+```
 
+Ahora si vuelves a ver el estado del proyecto, verás que el archivo _README.md_ está siendo rastreado y está preparado para ser confirmado:
+
+```bash
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-    new file:   README
-Puedes ver que está siendo rastreado porque aparece luego del encabezado “Cambios a ser confirmados” (“Changes to be committed” en inglés). Si confirmas en este punto, se guardará en el historial la versión del archivo correspondiente al instante en que ejecutaste git add. Anteriormente cuando ejecutaste git init, ejecutaste luego git add (files) - lo cual inició el rastreo de archivos en tu directorio. El comando git add puede recibir tanto una ruta de archivo como de un directorio; si es de un directorio, el comando añade recursivamente los archivos que están dentro de él.
+    new file:   README.md
+```
 
-Preparar Archivos Modificados
-Vamos a cambiar un archivo que esté rastreado. Si cambias el archivo rastreado llamado “CONTRIBUTING.md” y luego ejecutas el comando git status, verás algo parecido a esto:
+Podemos ver que está siendo rastreado porque aparece luego del encabezado “Cambios a ser confirmados” (“Changes to be committed” en inglés). Si confirmamos en este punto, se guardará en el historial la versión del archivo correspondiente al instante en que ejecutaste _git add_. Anteriormente cuando ejecutamos _git init_, ejecutamos posteiormente _git add (files)_, lo que inició el rastreo de archivos en nuestro directorio. El comando _git add_ puede recibir tanto una ruta de archivo como de un directorio; si es de un directorio, el comando añade recursivamente los archivos que están dentro de él.
 
+## Preparar Archivos Modificados
+
+Cambiamos un archivo que ya esté rastreado (se haya hecho al menos un commit). Si cambias el archivo rastreado llamado “CONTRIBUTING.md” y luego ejecutas el comando _git status_, verás algo parecido a esto:
+
+```bash
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-    new file:   README
+    new file:   README.md
 
 Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
     modified:   CONTRIBUTING.md
-El archivo “CONTRIBUTING.md” aparece en una sección llamada “Changes not staged for commit” (“Cambios no preparado para confirmar” en inglés) - lo que significa que existe un archivo rastreado que ha sido modificado en el directorio de trabajo pero que aun no está preparado. Para prepararlo, ejecutas el comando git add. git add es un comando que cumple varios propósitos - lo usas para empezar a rastrear archivos nuevos, preparar archivos, y hacer otras cosas como marcar como resuelto archivos en conflicto por combinación. Es más útil que lo veas como un comando para “añadir este contenido a la próxima confirmación” mas que para “añadir este archivo al proyecto”. Ejecutemos git add para preparar el archivo “CONTRIBUTING.md” y luego ejecutemos git status:
+```
 
+El archivo “CONTRIBUTING.md” aparece en una sección llamada “Changes not staged for commit” (“Cambios no preparado para confirmar” en inglés), que significa que existe un archivo rastreado que ha sido modificado en el directorio de trabajo pero que aun no está preparado. Para prepararlo, ejecutamos el comando _git add_. _git add_ es un comando que cumple varios propósitos, se usa para empezar a rastrear archivos nuevos, preparar archivos, y hacer otras cosas como marcar como resuelto archivos en conflicto por combinación. Es más útil verlo como un comando para “añadir este contenido a la próxima confirmación” mas que para “añadir este archivo al proyecto”. Ejecutamos _git add_ para preparar el archivo “CONTRIBUTING.md” y luego ejecutamos _git status_:
+
+```bash
 $ git add CONTRIBUTING.md
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-    new file:   README
+    new file:   README.md
     modified:   CONTRIBUTING.md
-Ambos archivos están preparados y formarán parte de tu próxima confirmación. En este momento, supongamos que recuerdas que debes hacer un pequeño cambio en CONTRIBUTING.md antes de confirmarlo. Abres de nuevo el archivo, lo cambias y ahora estás listos para confirmar. Sin embargo, ejecutemos git status una vez más:
+```
 
+Ambos archivos están preparados y formarán parte de nuestra próxima confirmación (commit). En este momento, supongamos que debemos hacer un pequeño cambio en el fichero _CONTRIBUTING.md_ antes de confirmarlo. Abrimos de nuevo el archivo, lo cambiamos y ahora está listos para confirmar. Sin embargo, si ejecutamos _git status_ una vez más:
+
+```bash
 $ vim CONTRIBUTING.md
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-    new file:   README
+    new file:   README.md
     modified:   CONTRIBUTING.md
 
 Changes not staged for commit:
@@ -95,49 +109,39 @@ Changes not staged for commit:
   (use "git checkout -- <file>..." to discard changes in working directory)
 
     modified:   CONTRIBUTING.md
-¡¿Pero qué…​?! Ahora CONTRIBUTING.md aparece como preparado y como no preparado. ¿Cómo es posible? Resulta que Git prepara un archivo de acuerdo al estado que tenía cuando ejecutas el comando git add. Si confirmas ahora, se confirmará la versión de CONTRIBUTING.md que tenías la última vez que ejecutaste git add y no la versión que ves ahora en tu directorio de trabajo al ejecutar git commit. Si modificas un archivo luego de ejecutar git add, deberás ejecutar git add de nuevo para preparar la última versión del archivo:
+```
 
+Ahora _CONTRIBUTING.md_ aparece como preparado y como no preparado. ¿Cómo es posible? Resulta que Git prepara un archivo de acuerdo al estado que tenía cuando ejecutamos el comando _git add_. Si confirmamos ahora, se confirmará la versión de _CONTRIBUTING.md_ que tenías la última vez que ejecutaste _git add_ y no la versión que ves ahora en tu directorio de trabajo al ejecutar _git commit_. Si modificas un archivo luego de ejecutar _git add_, deberás ejecutar _git add_ de nuevo para preparar la última versión del archivo:
+
+```bash
 $ git add CONTRIBUTING.md
 $ git status
 On branch master
 Changes to be committed:
   (use "git reset HEAD <file>..." to unstage)
 
-    new file:   README
+    new file:   README.md
     modified:   CONTRIBUTING.md
-Estatus Abreviado
-Si bien es cierto que la salida de git status es bastante explícita, también es verdad que es muy extensa. Git ofrece una opción para obtener un estatus abreviado, de manera que puedas ver tus cambios de una forma más compacta. Si ejecutas git status -s o git status --short obtendrás una salida mucho más simplificada.
 
-$ git status -s
- M README
-MM Rakefile
-A  lib/git.rb
-M  lib/simplegit.rb
-?? LICENSE.txt
-Los archivos nuevos que no están rastreados tienen un ?? a su lado, los archivos que están preparados tienen una A y los modificados una M. El estado aparece en dos columnas - la columna de la izquierda indica el estado preparado y la columna de la derecha indica el estado sin preparar. Por ejemplo, en esa salida, el archivo README está modificado en el directorio de trabajo pero no está preparado, mientras que lib/simplegit.rb está modificado y preparado. El archivo Rakefile fue modificado, preparado y modificado otra vez por lo que existen cambios preparados y sin preparar.
 
-Ignorar Archivos
-A veces, tendrás algún tipo de archivo que no quieres que Git añada automáticamente o más aun, que ni siquiera quieras que aparezca como no rastreado. Este suele ser el caso de archivos generados automáticamente como trazas o archivos creados por tu sistema de construcción. En estos casos, puedes crear un archivo llamado .gitignore que liste patrones a considerar. Este es un ejemplo de un archivo .gitignore:
+## Ignorar Archivos
 
+A veces, tendremos algún tipo de archivo que no queremos que _Git_ añada automáticamente o  que ni siquiera queremos que aparezca como _no rastreado_. Este suele ser el caso de archivos generados automáticamente como trazas o archivos creados por un sistema de construcción de proyectos como Maven, o un IDE como Eclipse. En estos casos, puedes crear un archivo llamado __.gitignore__ que liste patrones a considerar. Este es un ejemplo de un archivo _.gitignore_:
+
+```bash
 $ cat .gitignore
-*.[oa]
-*~
-La primera línea le indica a Git que ignore cualquier archivo que termine en “.o” o “.a” - archivos de objeto o librerías que pueden ser producto de compilar tu código. La segunda línea le indica a Git que ignore todos los archivos que termine con una tilde (~), lo cual es usado por varios editores de texto como Emacs para marcar archivos temporales. También puedes incluir cosas como trazas, temporales, o pid directamente; documentación generada automáticamente; etc. Crear un archivo .gitignore antes de comenzar a trabajar es generalmente una buena idea pues así evitas confirmar accidentalmente archivos que en realidad no quieres incluir en tu repositorio Git.
+*.class
+bin/
+```
 
-Las reglas sobre los patrones que puedes incluir en el archivo .gitignore son las siguientes:
+* La primera línea le indica a _Git_ que ignore cualquier archivo cuya extensión sea ".class", archivos compilados que no nos interesa rastrear.
+* La segunda línea le indica a _Git_ que ignore la carpeta _bin/_ y todos los ficheros y subdirectorios que se encuentren en ella.
 
-Ignorar las líneas en blanco y aquellas que comiencen con #.
+> __Nota__: Crear un archivo __.gitignore__ antes de comenzar a trabajar es generalmente una buena idea pues así evitas confirmar accidentalmente archivos que en realidad no quieres incluir en tu repositorio Git.
 
-Aceptar patrones glob estándar.
+A continuación puedes ver algunos ejemplos de reglas que se pueden aplicar al archivo _.gitignore_:
 
-Los patrones pueden terminar en barra (/) para especificar un directorio.
-
-Los patrones pueden negarse si se añade al principio el signo de exclamación (!).
-
-Los patrones glob son una especia de expresión regular simplificada usada por los terminales. Un asterisco (*) corresponde a cero o más caracteres; [abc] corresponde a cualquier carácter dentro de los corchetes (en este caso a, b o c); el signo de interrogación (?) corresponde a un carácter cualquier; y los corchetes sobre caracteres separados por un guión ([0-9]) corresponde a cualquier carácter entre ellos (en este caso del 0 al 9). También puedes usar dos asteriscos para indicar directorios anidados; a/**/z coincide con a/z, a/b/z, a/b/c/z, etc.
-
-Aquí puedes ver otro ejemplo de un archivo .gitignore:
-
+```bash
 # ignora los archivos terminados en .a
 *.a
 
@@ -150,15 +154,17 @@ Aquí puedes ver otro ejemplo de un archivo .gitignore:
 # ignora todos los archivos del directorio build/
 build/
 
-# ignora doc/notes.txt, pero este no doc/server/arch.txt
+# ignora doc/notes.txt, pero este este fichero no lo ignora: doc/server/arch.txt
 doc/*.txt
 
-# ignora todos los archivos .txt el directorio doc/
+# ignora todos los archivos .txt del directorio doc/
 doc/**/*.txt
-Tip
-GitHub mantiene una extensa lista de archivos .gitignore adecuados a docenas de proyectos y lenguajes en https://github.com/github/gitignore en caso de que quieras tener un punto de partida para tu proyecto.
+```
 
-Ver los Cambios Preparados y No Preparados
+> __Nota__: _GitHub_ mantiene una extensa lista de archivos _.gitignore_ adecuados a docenas de proyectos y lenguajes en la URL [https://github.com/github/gitignore](https://github.com/github/gitignore) en caso de que queramos tener un punto de partida para nuestro proyecto.
+
+# Ver los Cambios Preparados y No Preparados
+
 Si el comando git status es muy impreciso para ti - quieres ver exactamente que ha cambiado, no solo cuáles archivos lo han hecho - puedes usar el comando git diff. Hablaremos sobre git diff más adelante, pero lo usarás probablemente para responder estas dos preguntas: ¿Qué has cambiado pero aun no has preparado? y ¿Qué has preparado y está listo para confirmar? A pesar de que git status responde a estas preguntas de forma muy general listando el nombre de los archivos, git diff te muestra las líneas exactas que fueron añadidas y eliminadas, es decir, el parche.
 
 Supongamos que editas y preparas el archivo README de nuevo y luego editas CONTRIBUTING.md pero no lo preparas. Si ejecutas el comando git status, verás algo como esto:
