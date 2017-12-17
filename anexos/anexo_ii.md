@@ -155,7 +155,6 @@ Intentamos hacer de nuevo el commit, esta vez no nos da ningún problema:
 	 create mode 100644 .gitignore
 	 create mode 100644 src/HelloWorld.java
 
-	 
 Para ver el listado de commits que hemos hecho ejecutamos el comando "git log":
 	 
 	Docente@CIP000342 MINGW64 ~/eclipse-workspace/HelloWorld (master)
@@ -165,7 +164,6 @@ Para ver el listado de commits que hemos hecho ejecutamos el comando "git log":
 	Date:   Thu Dec 14 20:57:21 2017 +0000
 
 		Commit inicial
-
 
 Desde el navegador abrimos la página web de GitHub y creamos un nuevo repositorio llamado "HelloWorld", la URL del proyecto creado es:
 
